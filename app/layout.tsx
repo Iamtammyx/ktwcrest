@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Scene } from "@/components/three/Scene";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppWidget } from "@/components/ui/WhatsAppWidget";
+import { ChatWidget } from "@/components/ui/ChatWidget";
 import { site } from "@/lib/content";
 
 const geistSans = Geist({
@@ -57,8 +57,8 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
-          {/* Floating WhatsApp chat launcher (hands off to business WhatsApp). */}
-          <WhatsAppWidget />
+          {/* AI FAQ assistant with WhatsApp hand-off. */}
+          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>
