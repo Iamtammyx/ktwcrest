@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* Class-based dark mode driven by next-themes (attribute="class"). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------- */
+/* Design tokens                                                    */
+/* ---------------------------------------------------------------- */
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+
+  /* Brand navy (dark theme baseline, from KTW Crest reference) */
+  --color-navy-950: #050b16;
+  --color-navy-900: #091426;
+  --color-navy-850: #0b182c;
+  --color-navy-800: #0e1b30;
+  --color-navy-700: #16233c;
+
+  /* Brand blue accents */
+  --color-brand-700: #1e3fb0;
+  --color-brand-600: #244fe0;
+  --color-brand-500: #315cf5;
+  --color-brand-400: #5b82ff;
+  --color-brand-300: #78a7ff;
+
+  /* Heraldic gold accent */
+  --color-gold-500: #b8934a;
+  --color-gold-400: #c8a45d;
+  --color-gold-300: #d9bd82;
+}
+
+/* ---------------------------------------------------------------- */
+/* Theme-aware background mesh                                       */
+/* Light  = bright pastel (KidsGPT inspiration)                      */
+/* Dark   = deep cosmic navy (KTW Crest baseline)                    */
+/* ---------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --bg-base: #f5f6fe;
+  --fg: #10182b;
+  --fg-muted: #4a5568;
+  --hairline: rgba(16, 24, 43, 0.08);
+
+  --mesh:
+    radial-gradient(38% 40% at 12% 12%, rgba(167, 139, 250, 0.42), transparent 70%),
+    radial-gradient(42% 42% at 88% 8%, rgba(96, 165, 250, 0.4), transparent 70%),
+    radial-gradient(46% 48% at 82% 88%, rgba(244, 158, 214, 0.36), transparent 70%),
+    radial-gradient(44% 46% at 8% 90%, rgba(94, 214, 245, 0.34), transparent 70%),
+    radial-gradient(60% 60% at 50% 50%, rgba(255, 255, 255, 0.55), transparent 75%);
+}
+
+.dark {
+  color-scheme: dark;
+  --bg-base: #050b16;
+  --fg: #eef3fb;
+  --fg-muted: #9db0cc;
+  --hairline: rgba(255, 255, 255, 0.1);
+
+  --mesh:
+    radial-gradient(55% 45% at 50% -5%, rgba(49, 92, 245, 0.35), transparent 68%),
+    radial-gradient(40% 38% at 85% 25%, rgba(120, 167, 255, 0.16), transparent 70%),
+    radial-gradient(48% 45% at 12% 78%, rgba(49, 92, 245, 0.18), transparent 72%),
+    radial-gradient(35% 30% at 78% 92%, rgba(200, 164, 93, 0.1), transparent 72%);
+}
+
+@layer base {
+  * {
+    border-color: var(--hairline);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    background-image: var(--mesh);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--fg);
+    transition:
+      background-color 0.6s ease,
+      color 0.4s ease;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-brand-500) 30%, transparent);
+    color: var(--fg);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-brand-500) 45%, transparent);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  /* Muted foreground helper that follows the active theme token. */
+  .text-muted {
+    color: var(--fg-muted);
+  }
+
+  /* Gradient wordmark / accent text. */
+  .text-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--color-brand-500),
+      var(--color-brand-300) 45%,
+      #a78bfa 90%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Fine film-grain overlay for a premium, non-flat finish. */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
