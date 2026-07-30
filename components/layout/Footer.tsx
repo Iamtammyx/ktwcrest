@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/ui/Logo";
 import { site } from "@/lib/content";
 
 const socials = [
@@ -28,7 +27,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">
-            <Logo />
+            <p className="font-display text-lg font-semibold tracking-[0.12em] text-[color:var(--fg)] uppercase">
+              KTW Crest
+            </p>
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Technology consulting from strategy through delivery. {site.name}{" "}
               was registered in {site.founded} and is headquartered in{" "}
@@ -75,6 +76,16 @@ export function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm text-muted">
               <li>
+                <span className="text-[color:var(--fg)]">Call:</span>{" "}
+                <a
+                  href={`tel:${site.phoneTel}`}
+                  className="transition-colors hover:text-[color:var(--fg)]"
+                >
+                  {site.phone}
+                </a>
+              </li>
+              <li>
+                <span className="text-[color:var(--fg)]">Email:</span>{" "}
                 <a
                   href={`mailto:${site.email}`}
                   className="transition-colors hover:text-[color:var(--fg)]"

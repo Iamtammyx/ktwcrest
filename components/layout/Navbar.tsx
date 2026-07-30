@@ -29,7 +29,14 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b backdrop-blur-xl transition-colors duration-300",
+        scrolled
+          ? "border-white/40 bg-white/70 shadow-lg shadow-indigo-500/5 dark:border-white/10 dark:bg-[#050b16]/80"
+          : "border-white/30 bg-white/45 dark:border-white/[0.06] dark:bg-[#050b16]/55",
+      )}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 transition-all duration-300 sm:px-6">
         <Link href="/" className="shrink-0" aria-label={`${site.name} home`}>
           <Logo />

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { contact } from "@/lib/content";
+import { contact, site } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 type Fields = {
@@ -94,6 +94,47 @@ export function Contact() {
               </li>
             ))}
           </ul>
+
+          {/* Direct contact details */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="group flex flex-1 items-center gap-3 rounded-2xl border border-white/40 bg-white/40 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-white/60 dark:border-white/10 dark:bg-white/[0.04]"
+            >
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500/15 text-brand-500 dark:text-brand-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.6 9.8a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z" />
+                </svg>
+              </span>
+              <span className="min-w-0">
+                <span className="block text-[11px] font-medium tracking-wide text-muted uppercase">
+                  Call
+                </span>
+                <span className="block truncate text-sm font-medium text-[color:var(--fg)]">
+                  {site.phone}
+                </span>
+              </span>
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className="group flex flex-1 items-center gap-3 rounded-2xl border border-white/40 bg-white/40 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-white/60 dark:border-white/10 dark:bg-white/[0.04]"
+            >
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500/15 text-brand-500 dark:text-brand-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+                  <path d="m4 7 8 5 8-5" />
+                </svg>
+              </span>
+              <span className="min-w-0">
+                <span className="block text-[11px] font-medium tracking-wide text-muted uppercase">
+                  Email
+                </span>
+                <span className="block truncate text-sm font-medium text-[color:var(--fg)]">
+                  {site.email}
+                </span>
+              </span>
+            </a>
+          </div>
         </div>
 
         <GlassCard className="p-6 sm:p-8">

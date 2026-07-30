@@ -9,7 +9,9 @@ export const site = {
   tagline: "Strategy-led technology. Built to perform.",
   intro:
     "KTW Crest designs and delivers CRMs, dashboards, commerce platforms and custom applications that turn complex business needs into working software.",
-  email: "hello@ktwcrest.com",
+  email: "hello@ktwcrest.co.za",
+  phone: "082 833 6256",
+  phoneTel: "+27828336256",
   founded: "2016",
   location: "Johannesburg, South Africa",
   nav: [
