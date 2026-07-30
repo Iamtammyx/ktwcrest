@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { site } from "@/lib/content";
 
@@ -30,8 +31,9 @@ export function Footer() {
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Technology consulting from strategy through delivery. {site.name}{" "}
-              is a technology consulting company. Company registration details to
-              be confirmed.
+              was registered in {site.founded} and is headquartered in{" "}
+              {site.location}, serving clients across Africa and international
+              jurisdictions.
             </p>
             <div className="mt-5 flex items-center gap-3">
               {socials.map((s) => (
@@ -56,12 +58,12 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted">
               {site.nav.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="transition-colors hover:text-[color:var(--fg)]"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -81,12 +83,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="transition-colors hover:text-[color:var(--fg)]"
                 >
                   Book a Discovery Call
-                </a>
+                </Link>
               </li>
               <li className="text-xs">
                 A senior consultant replies within two working days.
@@ -97,7 +99,8 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/30 pt-6 text-xs text-muted sm:flex-row sm:items-center dark:border-white/10">
           <p>
-            © {year} {site.name}. All rights reserved.
+            © {site.founded}–{year} {site.name}. Registered in South Africa. All
+            rights reserved.
           </p>
           <p>{site.tagline}</p>
         </div>

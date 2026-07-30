@@ -3,6 +3,7 @@
 import * as THREE from "three";
 import { useEffect, useMemo, useRef } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
+import { PerspectiveCamera } from "@react-three/drei";
 
 /**
  * DotField — an abstract mesh of ~7k points arranged on a sphere and
@@ -246,6 +247,14 @@ export function DotField({
   });
 
   return (
-    <points ref={pointsRef} geometry={geometry} material={material} scale={1.9} />
+    <>
+      <PerspectiveCamera makeDefault position={[0, 0, 4.6]} fov={45} />
+      <points
+        ref={pointsRef}
+        geometry={geometry}
+        material={material}
+        scale={1.9}
+      />
+    </>
   );
 }
