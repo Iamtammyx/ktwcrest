@@ -94,6 +94,10 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <span className="text-[color:var(--fg)]">Visit:</span>{" "}
+                {site.address}
+              </li>
+              <li>
                 <Link
                   href="/contact"
                   className="transition-colors hover:text-[color:var(--fg)]"

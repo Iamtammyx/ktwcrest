@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DotField } from "./DotField";
 import { WaveField } from "./WaveField";
+import { ParticleText } from "./ParticleText";
 
 /**
  * Fixed, full-viewport WebGL background that sits behind all content
@@ -75,7 +76,11 @@ export function Scene() {
         {isHome ? (
           <DotField dark={dark} reduced={reduced} />
         ) : (
-          <WaveField dark={dark} reduced={reduced} />
+          <>
+            <WaveField dark={dark} reduced={reduced} />
+            {/* Floating "KTW Crest" wordmark, layered above the wave field. */}
+            <ParticleText text="KTW Crest" dark={dark} reduced={reduced} />
+          </>
         )}
 
         {/*

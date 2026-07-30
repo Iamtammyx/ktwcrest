@@ -154,7 +154,7 @@ export function WaveField({
       },
       uColorA: { value: p.a.clone() },
       uColorB: { value: p.b.clone() },
-      uOpacity: { value: 0 }, // fade in
+      uOpacity: { value: p.opacity },
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

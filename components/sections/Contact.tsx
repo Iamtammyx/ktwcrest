@@ -96,7 +96,7 @@ export function Contact() {
           </ul>
 
           {/* Direct contact details */}
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <a
               href={`tel:${site.phoneTel}`}
               className="group flex flex-1 items-center gap-3 rounded-2xl border border-white/40 bg-white/40 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-white/60 dark:border-white/10 dark:bg-white/[0.04]"
@@ -134,6 +134,22 @@ export function Contact() {
                 </span>
               </span>
             </a>
+            <div className="flex items-center gap-3 rounded-2xl border border-white/40 bg-white/40 px-4 py-3 sm:col-span-2 dark:border-white/10 dark:bg-white/[0.04]">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500/15 text-brand-500 dark:text-brand-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z" />
+                  <circle cx="12" cy="10" r="2.5" />
+                </svg>
+              </span>
+              <span className="min-w-0">
+                <span className="block text-[11px] font-medium tracking-wide text-muted uppercase">
+                  Visit
+                </span>
+                <span className="block text-sm font-medium text-[color:var(--fg)]">
+                  {site.address}
+                </span>
+              </span>
+            </div>
           </div>
         </div>
 

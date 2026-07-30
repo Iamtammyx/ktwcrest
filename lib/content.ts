@@ -12,6 +12,7 @@ export const site = {
   email: "hello@ktwcrest.co.za",
   phone: "082 833 6256",
   phoneTel: "+27828336256",
+  address: "Sandridge, Midrand, 1682",
   founded: "2016",
   location: "Johannesburg, South Africa",
   nav: [
@@ -19,6 +20,7 @@ export const site = {
     { label: "Work", href: "/work" },
     { label: "Insights", href: "/insights" },
     { label: "Process", href: "/process" },
+    { label: "Careers", href: "/careers" },
     { label: "FAQs", href: "/faqs" },
     { label: "Contact", href: "/contact" },
   ],
@@ -534,6 +536,72 @@ export const insights: Insight[] = [
 /* ------------------------------------------------------------------ */
 /* FAQs page                                                           */
 /* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+/* Careers page                                                        */
+/* ------------------------------------------------------------------ */
+
+export const careers = {
+  hero: {
+    eyebrow: "Careers at KTW Crest",
+    title: "Build. Grow. Ship work that performs.",
+    body: "We are a senior, multidisciplinary team turning complex business needs into working software. Join us and own real outcomes — from the first workshop to a rehearsed launch and beyond.",
+  },
+  // Honest, culture-oriented figures (no inflated vanity metrics).
+  stats: [
+    { value: "2016", label: "Building since" },
+    { value: "8", label: "Disciplines to grow across" },
+    { value: "1", label: "Team, strategy through delivery" },
+    { value: "100%", label: "Named outputs you can point to" },
+  ],
+  stages: [
+    {
+      title: "Early-career practitioners",
+      body: "Learn the craft on real engagements with a senior consultant beside you — not a training sandbox. You will own named outputs from your first project.",
+    },
+    {
+      title: "Experienced specialists",
+      body: "Go deep in CRM, data, commerce, engineering or design, and broaden into the disciplines next door. We back mastery and range.",
+    },
+    {
+      title: "Senior & lead consultants",
+      body: "Shape strategy, architect solutions and mentor the team. Bring executive-grade judgement to programmes that matter.",
+    },
+  ],
+  values: [
+    {
+      title: "Real ownership",
+      body: "You own outcomes end to end, with your name on the outputs you approve and ship.",
+      icon: "flag" as IconName,
+    },
+    {
+      title: "Mentorship from day one",
+      body: "Senior practitioners work beside you, not above you. Judgement is taught, not gatekept.",
+      icon: "users" as IconName,
+    },
+    {
+      title: "Range, not silos",
+      body: "One team across strategy, data, design and delivery — grow beyond a single lane.",
+      icon: "layers" as IconName,
+    },
+    {
+      title: "Learning, funded",
+      body: "Time and budget for the certifications, tools and conferences that sharpen your craft.",
+      icon: "sparkle" as IconName,
+    },
+    {
+      title: "Flexible & remote-friendly",
+      body: "Outcomes over hours. Work where you do your best thinking, with the team when it counts.",
+      icon: "compass" as IconName,
+    },
+    {
+      title: "Work that actually ships",
+      body: "We deliver systems people use every day — not decks that gather dust.",
+      icon: "check" as IconName,
+    },
+  ],
+  note: "We hire for judgement and range across our eight disciplines. No roles open right now? Send your CV and a note on the work you want to do — a senior consultant reads every application.",
+};
 
 export type Faq = { q: string; a: string };
 
