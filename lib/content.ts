@@ -10,12 +10,15 @@ export const site = {
   intro:
     "KTW Crest designs and delivers CRMs, dashboards, commerce platforms and custom applications that turn complex business needs into working software.",
   email: "hello@ktwcrest.com",
+  founded: "2016",
+  location: "Johannesburg, South Africa",
   nav: [
-    { label: "Services", href: "#services" },
-    { label: "Problems", href: "#problems" },
-    { label: "Process", href: "#process" },
-    { label: "Expertise", href: "#expertise" },
-    { label: "Contact", href: "#contact" },
+    { label: "Services", href: "/services" },
+    { label: "Work", href: "/work" },
+    { label: "Insights", href: "/insights" },
+    { label: "Process", href: "/process" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Contact", href: "/contact" },
   ],
 } as const;
 
