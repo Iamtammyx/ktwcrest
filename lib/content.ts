@@ -12,6 +12,7 @@ export const site = {
   email: "hello@ktwcrest.co.za",
   phone: "082 833 6256",
   phoneTel: "+27828336256",
+  whatsapp: "27828336256", // wa.me / click-to-chat format (SA, no +)
   address: "Sandridge, Midrand, 1682",
   founded: "2016",
   location: "Johannesburg, South Africa",
