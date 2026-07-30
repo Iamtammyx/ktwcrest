@@ -213,3 +213,351 @@ export type IconName =
   | "layers"
   | "shield"
   | "check";
+
+/* ------------------------------------------------------------------ */
+/* Services page — the 8 core disciplines, in depth                    */
+/* ------------------------------------------------------------------ */
+
+export type ServiceDiscipline = {
+  slug: string;
+  tag: string;
+  title: string;
+  summary: string;
+  approach: string;
+  capabilities: string[];
+  deliverables: string[];
+  tech: string[];
+  icon: IconName;
+};
+
+export const serviceDisciplines: ServiceDiscipline[] = [
+  {
+    slug: "crm",
+    tag: "Customer Relationship Management",
+    title: "CRM Solutions",
+    summary:
+      "End-to-end strategy, implementation, configuration, integration, and optimisation for complex relationship architectures.",
+    approach:
+      "We evaluate existing sales and service operations, define clean data structures, and deploy configured pipelines backed by thorough staff onboarding.",
+    capabilities: [
+      "CRM Architecture & Platform Selection",
+      "Data Migration & Cleansing Strategies",
+      "Custom Pipeline & Sales Stage Automation",
+      "Omnichannel Service & Ticketing Workflows",
+      "ERP & Billing System Integrations",
+    ],
+    deliverables: [
+      "Validated CRM Data Model & Blueprint",
+      "Configured Enterprise CRM Environment",
+      "Automated Workflow Triggers & Escalations",
+      "User Role & Security Mapping Document",
+      "Team Enablement & Playbook Documentation",
+    ],
+    tech: ["Salesforce", "HubSpot", "Microsoft Dynamics 365", "Custom Webhooks & REST APIs"],
+    icon: "users",
+  },
+  {
+    slug: "dashboards-bi",
+    tag: "Data & Analytics Architecture",
+    title: "Dashboards & Business Intelligence",
+    summary:
+      "Turning scattered metrics into clear data visualisations, decision-support tools, and executive reporting models.",
+    approach:
+      "Starting with core business questions, we design efficient data pipelines and crisp dashboards that give leaders single-source-of-truth clarity.",
+    capabilities: [
+      "Data Warehouse & ETL Pipeline Architecture",
+      "Executive Dashboard & KPI Visualization",
+      "Operational Reporting & Automated Alerts",
+      "Embedded Analytics for Portals & Apps",
+      "Data Governance & Access Control Frameworks",
+    ],
+    deliverables: [
+      "Unified Data Warehouse / Mart Scheme",
+      "Interactive Power BI / Tableau / Custom Dashboards",
+      "Data Dictionary & Metric Standards Documentation",
+      "Automated ETL / ELT Ingestion Pipelines",
+    ],
+    tech: ["Power BI", "Looker", "Tableau", "Snowflake", "PostgreSQL / BigQuery"],
+    icon: "chart",
+  },
+  {
+    slug: "ecommerce",
+    tag: "Digital Commerce Platforms",
+    title: "eCommerce Solutions",
+    summary:
+      "Scalable storefronts, payment gateway integrations, order management workflows, and high-performance digital commerce.",
+    approach:
+      "We engineer conversion-optimised checkout flows, robust inventory synchronization, and resilient payment rails tailored to regional & global buyers.",
+    capabilities: [
+      "B2B & B2C Storefront Architecture",
+      "Payment Gateway & Local Payment Methods Integration",
+      "Custom Product Configuration & Pricing Rules",
+      "ERP & Warehouse Inventory Synchronization",
+      "Headless Commerce & Frontend Optimization",
+    ],
+    deliverables: [
+      "Production-Ready Headless / Modular Storefront",
+      "Integrated Payment & Checkout Service Layer",
+      "Inventory & Fulfillment Sync Automated Workflows",
+      "Performance Audit & Mobile Speed Optimization Report",
+    ],
+    tech: ["Shopify Plus", "WooCommerce", "Custom Headless Frameworks", "Stripe", "Local Payment Processors"],
+    icon: "cart",
+  },
+  {
+    slug: "custom-applications",
+    tag: "Software Engineering",
+    title: "Custom Applications",
+    summary:
+      "Custom web platforms, mobile applications, internal portals, and line-of-business systems tailored to operational workflows.",
+    approach:
+      "We combine strict engineering discipline with user-centered design to craft maintainable, cloud-native applications that solve specific bottlenecks.",
+    capabilities: [
+      "Full-Stack Web & Mobile App Development",
+      "Cross-Platform Mobile (Flutter / React Native)",
+      "Enterprise Line-of-Business Systems",
+      "Custom Client & Partner Self-Service Portals",
+      "Cloud-Native Microservices & Modernization",
+    ],
+    deliverables: [
+      "Responsive Cloud Web & Mobile Platform",
+      "Clean Modular Codebase & Architectural Documentation",
+      "Comprehensive Automated Test Suite",
+      "DevOps CI/CD Deployment Pipeline Configuration",
+    ],
+    tech: ["Flutter", "Dart", "Node.js / Python", "REST & GraphQL APIs", "AWS / Google Cloud / Azure"],
+    icon: "app",
+  },
+  {
+    slug: "integration-automation",
+    tag: "Systems & Process Digitisation",
+    title: "Integration & Automation",
+    summary:
+      "Connecting isolated enterprise applications, designing robust APIs, and automating manual business workflows.",
+    approach:
+      "We map data pathways across legacy and modern tools, build resilient middleware connectors, and automate repetitive operational steps.",
+    capabilities: [
+      "API Design, Development & Management",
+      "Enterprise Application Integration (EAI)",
+      "Robotic Process Automation (RPA) & Event Triggers",
+      "Webhook Architecture & Real-Time Sync",
+      "Legacy System API Wrapper Modernization",
+    ],
+    deliverables: [
+      "Scalable API Gateway & Microservices Infrastructure",
+      "Automated Data Integration Workflows & Monitor Logs",
+      "Comprehensive OpenAPI / Swagger Documentation",
+      "Error Alerting & Fallback Recovery Protocols",
+    ],
+    tech: ["REST / GraphQL APIs", "Zapier / Make / n8n", "Node.js Middleware", "Kafka / RabbitMQ"],
+    icon: "link",
+  },
+  {
+    slug: "digital-strategy",
+    tag: "Transformation Leadership",
+    title: "Digital Strategy & Advisory",
+    summary:
+      "Product discovery, technology roadmap creation, architecture evaluation, and strategic alignment for digital initiatives.",
+    approach:
+      "We partner directly with executive leadership to evaluate technical feasibility, define practical roadmaps, and safeguard IT investments.",
+    capabilities: [
+      "Technology Capability & Maturity Assessment",
+      "Multi-Year Digital Transformation Roadmaps",
+      "Vendor Evaluation & RFP Management",
+      "Solution & System Architecture Blueprinting",
+      "Digital Operating Model & Governance Design",
+    ],
+    deliverables: [
+      "Prioritised Technology Roadmap & Business Case",
+      "System Architecture Blueprint & Data Standards",
+      "Vendor Assessment Matrix & Technical Recommendations",
+      "Executive Alignment Workshop Summaries",
+    ],
+    tech: ["Enterprise Architecture", "Cloud Governance", "Risk & Compliance Frameworks", "TOGAF / Agile"],
+    icon: "compass",
+  },
+  {
+    slug: "product-design",
+    tag: "UX / UI Architecture",
+    title: "Product Design & Experience",
+    summary:
+      "User research, information architecture, visual design systems, and rapid prototyping that drive adoption.",
+    approach:
+      "We craft clean, accessible, and intuitive user interfaces that reduce training overhead and turn complex tools into clear user journeys.",
+    capabilities: [
+      "User Research, Persona Mapping & Journey Mapping",
+      "Wireframing & Interactive Prototype Design",
+      "Enterprise Design Systems & UI Pattern Libraries",
+      "Usability Testing & Accessibility Audits (WCAG 2.2 AA)",
+      "Conversion Rate Optimization (CRO) & Interface Polish",
+    ],
+    deliverables: [
+      "High-Fidelity Interactive Figma Prototypes",
+      "Reusable Component Design System & Design Tokens",
+      "User Testing Insights & Usability Audit Report",
+      "UX Copywriting & Design Standard Guidelines",
+    ],
+    tech: ["Figma", "Design Tokens", "Design Systems", "WCAG 2.2 AA", "User Testing Frameworks"],
+    icon: "sparkle",
+  },
+  {
+    slug: "programme-delivery",
+    tag: "Delivery Governance",
+    title: "Programme & Project Delivery",
+    summary:
+      "Rigorous project management, quality assurance, launch execution, and continuous delivery governance.",
+    approach:
+      "We apply senior consulting discipline to maintain momentum, enforce quality gates, and deliver technology initiatives on schedule and scope.",
+    capabilities: [
+      "Agile / Hybrid Programme & Project Management",
+      "Quality Assurance, Automation & Testing Strategy",
+      "Vendor Management & Multi-Party Delivery Coordination",
+      "Risk Mitigation, Dependency Tracking & Governance",
+      "Launch Execution, Change Management & Post-Launch Ops",
+    ],
+    deliverables: [
+      "Project Charter, WBS & Sprint Backlog",
+      "Transparent Weekly Executive Progress Dashboards",
+      "Comprehensive Test Suite & Quality Assurance Reports",
+      "Go-Live Readiness Checklist & Release Plan",
+    ],
+    tech: ["Jira / Azure DevOps", "Agile / Scrum / Kanban", "Automated QA Tools", "Risk & RAID Logs"],
+    icon: "flag",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Work page — case studies                                            */
+/* ------------------------------------------------------------------ */
+
+export type CaseStudy = {
+  tag: string;
+  title: string;
+  challenge: string;
+  solution: string;
+  outcome: string;
+  chips: string[];
+  sample?: boolean;
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    tag: "Financial & Professional Services",
+    title: "B2B Enterprise Relationship Management Modernization",
+    challenge:
+      "Fragmented customer information stored in regional spreadsheets resulted in duplicate client contact and inaccurate quarterly pipeline estimates.",
+    solution:
+      "Architected and configured an integrated CRM environment with automated deal routing and single-view client profiles.",
+    outcome:
+      "Streamlined account coordination across regional offices and established dependable sales reporting.",
+    chips: ["CRM Strategy", "Data Integration", "Process Digitisation"],
+    sample: true,
+  },
+  {
+    tag: "Logistics & Supply Chain",
+    title: "Executive Decision-Support Dashboard & Data Warehouse",
+    challenge:
+      "Manual spreadsheet reporting required 12+ hours weekly and lacked real-time visibility into operational bottlenecks.",
+    solution:
+      "Engineered an automated data pipeline and interactive Power BI dashboard suite with automated threshold alerts.",
+    outcome:
+      "Eliminated weekly manual report generation and provided leadership with instant operational visibility.",
+    chips: ["Dashboards & BI", "Data Architecture", "ETL Pipelines"],
+    sample: true,
+  },
+  {
+    tag: "Technology & Legal Services",
+    title: "Custom Partner Self-Service & Document Exchange Portal",
+    challenge:
+      "Manual email attachments for sensitive compliance document exchanges created security risks and delayed partner approvals.",
+    solution:
+      "Developed a custom cloud application with role-based document permissions, audit trails, and automated notification triggers.",
+    outcome:
+      "Reduced onboarding turn-around times while enforcing strict access security controls.",
+    chips: ["Custom Applications", "UX/UI Design", "Security"],
+    sample: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Insights page — thought leadership                                  */
+/* ------------------------------------------------------------------ */
+
+export type Insight = {
+  category: string;
+  readTime: string;
+  title: string;
+  excerpt: string;
+  preview: string;
+  chips: string[];
+  draft?: boolean;
+};
+
+export const insights: Insight[] = [
+  {
+    category: "CRM Solutions",
+    readTime: "5 min read",
+    title: "Why CRM Projects Fail Without a Data Quality Strategy",
+    excerpt:
+      "Investing in CRM platforms yields diminished results if underlying customer data remains unformatted and duplicated.",
+    preview:
+      "A successful CRM rollout is 20% software selection and 80% data structure and process alignment. Before configuring pipeline stages, organisations must establish standardized entity definitions, mandatory field validation, and ongoing governance routines.",
+    chips: ["CRM", "Data Quality", "Strategy"],
+    draft: true,
+  },
+  {
+    category: "Business Intelligence",
+    readTime: "6 min read",
+    title: "Designing Executive Dashboards That Drive Action",
+    excerpt:
+      "How to avoid dashboard fatigue by focusing on decision-enabling metrics rather than vanity graphics.",
+    preview:
+      "Effective business intelligence dashboards do not try to display every available data point on one screen. Instead, they present clear operational hierarchies, contextual benchmarks, and automated indicators that prompt executive action.",
+    chips: ["BI", "Analytics", "Leadership"],
+    draft: true,
+  },
+  {
+    category: "Integration & Automation",
+    readTime: "7 min read",
+    title: "Architecting Resilient API Integrations for Enterprise Workflows",
+    excerpt:
+      "Best practices for API middleware, exception handling, and maintaining auditability across connected systems.",
+    preview:
+      "When connecting core line-of-business systems, point-to-point hardcoded scripts create fragile dependencies. Modern enterprise integration relies on asynchronous message queues, automated retry limits, and centralized health logging.",
+    chips: ["Integration", "APIs", "Architecture"],
+    draft: true,
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* FAQs page                                                           */
+/* ------------------------------------------------------------------ */
+
+export type Faq = { q: string; a: string };
+
+export const faqs: Faq[] = [
+  {
+    q: "When was KTW Crest established?",
+    a: "KTW Crest was registered in 2016 as a technology consulting company focused on practical strategy, engineering, and digital systems delivery.",
+  },
+  {
+    q: "Where is KTW Crest located?",
+    a: "KTW Crest is headquartered in Johannesburg, South Africa [placeholder — contact details subject to confirmation]. We serve clients across Africa and international jurisdictions.",
+  },
+  {
+    q: "How do you structure project engagements?",
+    a: "We offer flexible engagement models tailored to project needs, including fixed-scope milestone deliverables, dedicated consulting discovery sprints, and ongoing technology advisory retainers.",
+  },
+  {
+    q: "Do you provide post-launch support and maintenance?",
+    a: "Yes. Following deployment, we provide post-launch monitoring, warranty optimization sprints, and continuous enhancement support tailored to operational requirements.",
+  },
+  {
+    q: "Which technologies and platforms do you work with?",
+    a: "Our practitioners work across mainstream CRM, BI, commerce and cloud platforms — Salesforce, HubSpot, Dynamics, Power BI, Tableau, Shopify, AWS, Google Cloud and Azure — as well as custom stacks in Node.js, Python and Flutter. We recommend tools based on fit, not partnerships.",
+  },
+  {
+    q: "How do we get started?",
+    a: "Begin with a discovery call. A senior consultant reads every enquiry and will confirm scope, price and delivery dates before any work starts — usually within two working days.",
+  },
+];
