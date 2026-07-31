@@ -33,6 +33,24 @@ export const metadata: Metadata = {
     description: site.intro,
     type: "website",
   },
+  icons: {
+    // Theme-aware crest: navy shield on light tabs, light shield on dark tabs,
+    // with favicon.ico as a universal fallback.
+    icon: [
+      {
+        url: "/favicon-light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-dark.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
